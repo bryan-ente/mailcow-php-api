@@ -181,6 +181,8 @@ class Domains
      * 
      */
     public function deleteDomainTag(string $domain, array $tags){
-        return $this->MailCowAPI->post('delete/domain/tag/' . urlencode($domain), $tags);
+        return $this->MailCowAPI->post('delete/domain/tag/' . urlencode($domain), 
+            $tags
+        );
     }
 }

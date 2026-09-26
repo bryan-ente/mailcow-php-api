@@ -15,7 +15,7 @@ class QueueManager {
     * @return array
     */
    public function deleteQueue(){
-        return $this->MailCowAPI->post('delete/mailq');
+        return $this->MailCowAPI->post('delete/mailq', ["action" => "super_delete"]);
    }
 
    /**
@@ -23,7 +23,7 @@ class QueueManager {
     * @return array
     */
    public function flushQueue(){
-        return $this->MailCowAPI->post('edit/mailq');
+        return $this->MailCowAPI->post('edit/mailq', ["action" => "flush"]);
    }
 
    /**

@@ -12,7 +12,7 @@ class Routing {
 
     /**
      * `addRelayHost()` - Add a new relay host to relay emails to
-     * @param string $hostname The hostname
+     * @param string $hostname The hostname e.g. "mail.domain.tld:25
      * @param string $password The password for authentication
      * @param string $username The username for authentication
      */
@@ -62,19 +62,19 @@ class Routing {
 
     /**
      * `getRelayHost()` - Returns given relay's host configuration
-     * @param int $id ID of the relay host
+     * @param int|string $id ID of the relay host or "all" to get all relay hosts
      * @return array
      */
-    public function getRelayHost(int $id){
+    public function getRelayHost(int|string $id){
         return $this->MailCowAPI->get('get/relayhost/' . $id);
     }
 
     /**
      * `getTransportMap()` - Returns given transport map's configuration
-     * @param int $id ID of the transport map
+     * @param int|string $id ID of the transport map or "all" to get all transport maps
      * @return array
      */
-    public function getTransportMap(int $id){
+    public function getTransportMap(int|string $id){
         return $this->MailCowAPI->get('get/transport/' . $id);
     }
 }

@@ -16,7 +16,7 @@ class DKIM {
      * @return array
      */
     public function deleteKey(string $domain){
-        return $this->MailCowAPI->post('delete/dkim', [$domain]);
+        return $this->MailCowAPI->post('delete/dkim', [[$domain]]);
     }
 
     /**

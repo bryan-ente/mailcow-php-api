@@ -60,19 +60,19 @@ class AddressRewrite {
 
     /**
      * `getBccMap()` - Returns the configuration of a BCC mapping
-     * @param int $id The ID of the mapping
+     * @param int|string $id The ID of the mapping or "all" to get all mappings
      * @return array
      */
-    public function getBccMap(int $id){
+    public function getBccMap(int|string $id){
         return $this->MailCowAPI->get('get/bcc/' . $id);
     }
 
     /**
      * `getRecipientMap()` - Returns the configuration of a Recipient mapping
-     * @param int $id The ID of the mapping
+     * @param int|string $id The ID of the mapping or "all" to get all mappings
      * @return array
      */
-    public function getRecipientMap(int $id){
+    public function getRecipientMap(int|string $id){
         return $this->MailCowAPI->get('get/recipient_map/' . $id);
     }
     

@@ -23,7 +23,7 @@ class oAuth {
 
     /**
      * `deleteClient()` - Delete a oAuth2 client with given ID
-     * @param int $id
+     * @param int $id The ID of the client to delete
      * @return array
      */
     public function deleteClient(int $id){
@@ -32,10 +32,10 @@ class oAuth {
 
     /**
      * `getClient()` - Get oAuth2 client configuration
-     * @param int $id
+     * @param int|string $id The ID of the client or "all" to get all clients
      * @return array
      */
-    public function getClient(int $id){
+    public function getClient(int|string $id){
         return $this->MailCowAPI->get('get/oauth2-client/' . $id);
     }
 }

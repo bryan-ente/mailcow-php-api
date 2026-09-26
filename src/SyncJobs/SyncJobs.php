@@ -50,6 +50,16 @@ class SyncJobs {
     }
 
     /**
+     * `updateSyncJob()` - Updates an existing sync job
+     * @param int $id The ID of the sync job to update
+     * @param array $attributes An associative array of attributes to update, e.g. ['active' => 1, 'mins_interval' => 30], see above function (createSyncJob) for available attributes and their types
+     * @return array|string
+     */
+    public function updateSyncJob(int $id, array $attributes){
+        return $this->MailCowAPI->post('edit/syncjob/' . $id, $attributes);
+    }
+
+    /**
      * `deleteSyncJob()` - Deletes one or multiple Sync Job
      * @param array $ids An array of IDs of the sync jobs to delete, e.g. [1, 2, 3]
      * @return array|string

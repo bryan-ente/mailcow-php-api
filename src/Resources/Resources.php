@@ -12,7 +12,7 @@ class Resources {
 
     /**
      * `deleteResource()` - Deletes given resource
-     * @param string $resourceMail
+     * @param string $resourceMail The email address of the resource to delete
      * @return array
      */
     public function deleteResource(string $resourceMail){

@@ -20,6 +20,7 @@ class Status {
 
     /**
      * `getSolr()` - Returns the status of Solr
+     * @deprecated This function has been deprecated in mailcow version 2025-01 as Solr has been removed.
      * @return array
      */
     public function getSolr(){

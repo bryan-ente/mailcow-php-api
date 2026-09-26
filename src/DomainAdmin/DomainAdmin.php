@@ -34,7 +34,7 @@ class DomainAdmin
     /**
      * addAdmin - Add an domain admin
      * @param array $domains Array of domains the user should be domain admin of
-     * @param string $password
+     * @param string $password Password for the domain admin
      * @param string $password2 Same password, just again
      * @param string $username User which gets to be the domain admin
      * @return array
@@ -52,15 +52,15 @@ class DomainAdmin
 
     /**
      * editDomainAdminACL - Edit the ACLs for Domain Admins
-     * @param string $acl - The ACL in question to edit
+     * @param array $acl_users - The ACL in question to edit
      * @param array $permissions - An array of permissions. See $this->permissions, e.g. ["smtp_ip_access", "domain_desc", "alias_domain", ...]
      * @return array
      */
-    public function editDomainAdminACL(string $acl, array $permissions)
+    public function editDomainAdminACL(array $acl_users, array $permissions)
     {
         return $this->MailCowAPI->post('edit/da-acl', [
-            "items" => $acl,
-            "attr" => $this->computePermissions($permissions)
+            "items" => $acl_users,
+            "attr" => ["da_acl" => $this->computePermissions($permissions)]
         ]);
     }
 

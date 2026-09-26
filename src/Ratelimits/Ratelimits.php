@@ -12,7 +12,7 @@ class Ratelimits {
 
     /**
      * `getMailboxRatelimits()` - Returns the given mailbox' rate limits
-     * @param string $mailbox
+     * @param string $mailbox The mailbox name or "all" to get all mailboxes
      * @return array
      */
     public function getMailboxRatelimits(string $mailbox){
@@ -21,7 +21,8 @@ class Ratelimits {
 
     /**
      * `getDomainRatelimits()` - Returns the given domain's rate limits
-     * @param string $domain
+     * @param string $domain The domain name or "all" to get all domains
+     * @return array
      */
     public function getDomainRatelimits(string $domain){
         return $this->MailCowAPI->get('get/rl-domain/' . $domain);
